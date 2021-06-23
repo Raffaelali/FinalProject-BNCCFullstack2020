@@ -1,0 +1,192 @@
+#pict1 {
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+section {
+  position: relative;
+  min-height: 100vh;
+  background: #54885f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+}
+
+section .layar {
+  position: relative;
+  width: 800px;
+  height: 500px;
+  background: #3abdc2;
+  -webkit-box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+section .layar .user {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+section .layar .user .imageBx {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+section .layar .user .imageBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+section .layar .user .formBx {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background: #2a9d8f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 40px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+section .layar .user .formBx form h2 {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+section .layar .user .formBx form input {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  background: #f5f5f5;
+  color: #333;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  margin: 8px 0;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+
+section .layar .user .formBx form input[type="submit"] {
+  max-width: 100px;
+  background: #f4a261;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+section .layar .user .formBx form .signup {
+  position: relative;
+  margin-top: 20px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #fefae0;
+  font-weight: 300;
+}
+
+section .layar .user .formBx form .signup a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #f9c74f;
+}
+
+section .layar .signupBx {
+  pointer-events: none;
+}
+
+section .layar .signupBx .formBx {
+  left: 100%;
+}
+
+section .layar .signupBx .imageBx {
+  left: -100%;
+}
+
+section .layar .signinBx .formBx {
+  left: 0;
+}
+
+section .layar .signinBx .imageBx {
+  left: 0%;
+}
+
+section .layar.active .signupBx {
+  pointer-events: initial;
+}
+
+section .layar.active .signupBx .formBx {
+  left: 0;
+}
+
+section .layar.active .signupBx .imageBx {
+  left: 0;
+}
+
+section .layar.active .signinBx .formBx {
+  left: 100%;
+}
+
+section .layar.active .signinBx .imageBx {
+  left: -100%;
+}
+
+@media (max-width: 1000px) {
+  section .layar {
+    max-width: 400px;
+  }
+  section .layar .imageBx {
+    display: none;
+  }
+  section .layar .user .formBx {
+    width: 100%;
+  }
+}
