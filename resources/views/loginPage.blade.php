@@ -1,10 +1,11 @@
 @extends('layouts/main')
-<section>
+@section('content')
+<section class="loginContent">
     <div class="layar">
         <div class="user signinBx">
             <div class="imageBx"><img src="{{asset('images/pexels-sasha-maslova-8388520(2).jpg')}}" alt="" id="pict1"></div>
             <div class="formBx">
-                <form action="">
+                <form class="formSign" action="">
                     <h2>Sign In</h2>
                     <input type="text" name="username" id="username" placeholder="Username">
                     <input type="password" name="password" id="password" placeholder="Password">
@@ -15,7 +16,7 @@
         </div>
         <div class="user signupBx">
             <div class="formBx">
-                <form action="">
+                <form class="formSign" action="">
                     <h2>Sign Up</h2>
                     <input type="text" name="username" id="usernameregister" placeholder="Username">
                     <input type="email" name="email" id="email" placeholder="Email Address">
@@ -29,3 +30,4 @@
         </div>
     </div>
 </section>
+@endsection

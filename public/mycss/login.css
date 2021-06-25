@@ -1,17 +1,11 @@
-#pict1 {
-  width: 100%;
-  height: 100%;
-}
-
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  box-sizing: border-box;
 }
 
-section {
+.loginContent {
   position: relative;
   min-height: 100vh;
   background: #54885f;
@@ -27,7 +21,7 @@ section {
   padding: 20px;
 }
 
-section .layar {
+.layar {
   position: relative;
   width: 800px;
   height: 500px;
@@ -37,7 +31,7 @@ section .layar {
   overflow: hidden;
 }
 
-section .layar .user {
+.user {
   position: absolute;
   top: 0;
   left: 0;
@@ -48,7 +42,7 @@ section .layar .user {
   display: flex;
 }
 
-section .layar .user .imageBx {
+.imageBx {
   position: relative;
   width: 50%;
   height: 100%;
@@ -56,7 +50,7 @@ section .layar .user .imageBx {
   transition: 0.5s;
 }
 
-section .layar .user .imageBx img {
+.imageBx img {
   position: absolute;
   top: 0;
   left: 0;
@@ -66,7 +60,7 @@ section .layar .user .imageBx img {
      object-fit: cover;
 }
 
-section .layar .user .formBx {
+.formBx {
   position: relative;
   width: 50%;
   height: 100%;
@@ -85,7 +79,7 @@ section .layar .user .formBx {
   transition: 0.5s;
 }
 
-section .layar .user .formBx form h2 {
+.formSign h2 {
   font-size: 18px;
   font-weight: 600;
   letter-spacing: 2px;
@@ -95,7 +89,7 @@ section .layar .user .formBx form h2 {
   color: #fff;
 }
 
-section .layar .user .formBx form input {
+.formSign input {
   position: relative;
   width: 100%;
   padding: 10px;
@@ -111,7 +105,7 @@ section .layar .user .formBx form input {
   font-weight: 300;
 }
 
-section .layar .user .formBx form input[type="submit"] {
+.formSign input[type="submit"] {
   max-width: 100px;
   background: #f4a261;
   color: #fff;
@@ -123,7 +117,7 @@ section .layar .user .formBx form input[type="submit"] {
   transition: 0.5s;
 }
 
-section .layar .user .formBx form .signup {
+.signup {
   position: relative;
   margin-top: 20px;
   font-size: 12px;
@@ -132,61 +126,61 @@ section .layar .user .formBx form .signup {
   font-weight: 300;
 }
 
-section .layar .user .formBx form .signup a {
+.signup a {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 600;
   color: #f9c74f;
 }
 
-section .layar .signupBx {
+.signupBx {
   pointer-events: none;
 }
 
-section .layar .signupBx .formBx {
+.signupBx .formBx {
   left: 100%;
 }
 
-section .layar .signupBx .imageBx {
+.signupBx .imageBx {
   left: -100%;
 }
 
-section .layar .signinBx .formBx {
+.signinBx .formBx {
   left: 0;
 }
 
-section .layar .signinBx .imageBx {
+.signinBx .imageBx {
   left: 0%;
 }
 
-section .layar.active .signupBx {
+.layar.active .signupBx {
   pointer-events: initial;
 }
 
-section .layar.active .signupBx .formBx {
+.layar.active .signupBx .formBx {
   left: 0;
 }
 
-section .layar.active .signupBx .imageBx {
+.layar.active .signupBx .imageBx {
   left: 0;
 }
 
-section .layar.active .signinBx .formBx {
+.layar.active .signinBx .formBx {
   left: 100%;
 }
 
-section .layar.active .signinBx .imageBx {
+.layar.active .signinBx .imageBx {
   left: -100%;
 }
 
 @media (max-width: 1000px) {
-  section .layar {
+  .layar {
     max-width: 400px;
   }
-  section .layar .imageBx {
+  .layar .imageBx {
     display: none;
   }
-  section .layar .user .formBx {
+  .layar .user .formBx {
     width: 100%;
   }
 }
