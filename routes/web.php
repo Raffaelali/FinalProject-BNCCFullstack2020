@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/sign', function () {
-    return view('loginPage');
+    return view('Postpage');
 });
 Route::get('/', function () {
     return view('landingPage');

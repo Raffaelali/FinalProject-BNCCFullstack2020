@@ -13,6 +13,7 @@
 <body>
     @include('layouts/navbar1')
     @yield('content')
+    @include('layouts/footer')
     <script src="{{asset('js/bootstrap.bundle.js')}}"></script>
     <script src="{{asset('myjs/login.js')}}"></script>
 </body>

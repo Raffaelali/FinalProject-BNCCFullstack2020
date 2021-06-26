@@ -2,6 +2,14 @@
 * {
     font-family:'Poppins',sans-serif;
 }
+body,html{
+    min-height: 100vh;
+}
+main {
+    min-height: 100%;
+}
+
+
 /** Navbar Here */
 #logo {
     font-size: 2em;
@@ -46,3 +54,74 @@
 }
 
 /** Landing Page */
+main {
+    min-height: 100%;
+}
+#bncc {
+    width: 50% !important;
+}
+#bncc-seru {
+    width: 100%;
+    height: 80%;
+}
+.penampung {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.divider { 
+    height: 1px;
+    width: 50em;
+    background-color:#e3e3e3;
+    display: inline-block;
+}
+.btn-topik {
+    text-decoration: none;
+    color: white;
+    background-color: #2a9d8f;
+}
+.stick-footer {
+    position: sticky;
+    top: 100%;
+}
+.kartu-halaman img{
+    object-fit: cover;
+}
+/** Profile Page */
+.bg-light-blue {
+    background-color: rgb(62, 112, 218);
+}
+.profile-card {
+    width: 30rem;
+}
+.profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.foto-profile {
+    width: 15.5em;
+    clip-path: circle();
+    transform: translate(10%,0);
+}
+#namaUser{ 
+    font-size: 2em;
+    transform: translate(23%,-55%);
+}
+#emailUser{ 
+    font-size: 2em;
+    transform: translate(5%,-55%);
+}
+
+/** Post Page */
+.post-card {
+    max-width: 40rem;
+    max-height: 22rem;
+}
+.post-card img{
+    overflow: hidden;
+    max-width:min-content;
+    justify-content: center;
+    object-fit: cover;
+}
