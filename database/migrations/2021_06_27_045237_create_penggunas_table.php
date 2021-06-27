@@ -18,9 +18,9 @@ class CreatePenggunasTable extends Migration
             $table->string('nama', 255);
             $table->string('password', 255);
             $table->string('email', 255);
-            $table->string('adress', 255);
-            $table->string('phone', 255);
-            $table->char('gender', 1);
+            $table->string('adress', 255)->nullable();
+            $table->string('phone', 255)->nullable();
+            $table->char('gender', 1)->nullable();
             $table->timestamps();
         });
     }

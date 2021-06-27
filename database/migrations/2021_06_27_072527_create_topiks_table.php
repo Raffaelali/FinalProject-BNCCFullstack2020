@@ -15,7 +15,7 @@ class CreateTopiksTable extends Migration
     {
         Schema::create('topiks', function (Blueprint $table) {
             $table->id();
-            $table->integer('post_id');
+            $table->integer('post_id')->nullable();
             $table->string('topik_name', 12);
             $table->timestamps();
         });

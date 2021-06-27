@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Post;
 
 class PostController extends Controller
 {
@@ -13,7 +14,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('postPage');
+        $posts = Post::all();
+        return view('postPage', compact('posts'));
     }
 
     /**
@@ -23,7 +25,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('layouts.createPostPage');
     }
 
     /**
@@ -34,7 +36,8 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Post::create($request->all());
+        return redirect('/post');
     }
 
     /**
@@ -54,9 +57,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
-        //
+        return view('layouts.editPostPage', compact('post'));
     }
 
     /**
@@ -66,9 +69,13 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Post $post)
     {
-        //
+        Post::where('id', $post->id)->update([
+            'Judul' => $request->Judul,
+            'content' => $request->content
+        ]);
+        return redirect('/post');
     }
 
     /**
@@ -77,8 +84,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Post $post)
     {
-        //
+        Post::destroy($post->id);
+        return redirect('/post');
     }
 }

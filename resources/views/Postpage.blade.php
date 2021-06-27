@@ -10,7 +10,7 @@
                         <h1 class="mb-3 text-bold"><strong>Postingan</strong></h1>
                         <h5 class="mplus text-black-77 mb-3">Hai, Selamat datang di postingan. Disini kamu bisa buat postingan <br> 
                         seputar IT dan kamu juga bisa lihat postingan dari teman-teman</h5>
-                        <a href="">Buat Posting Sekarang</a>
+                        <a href="/post/create">Buat Posting Sekarang</a>
                     </div>
                 </div>
                 <div class="col-5 mt-5">
@@ -47,76 +47,28 @@
     <section class="pb-5 pt-0 bg-light">
         <div class="container">
             <div class="row">
+                @foreach ($posts as $post)
                 <div class="col-6 mb-3">
                     <div class="card post-card" style="width:auto;">
-                        <img src="{{ asset('images/pexels-cottonbro-4709285.jpg') }}" class="card-img-top" alt="...">
-                        <div class="card-body">
+                        <img src="{{ asset('images/pexels-cottonbro-4709285.jpg') }}" class="" alt="...">
+                        <div class="card-body badan-card">
                             <div class="card-topik mb-3">
                                 <a href="/sign" class="btn-sm btn-topik"> Kopi</a>
                                 <a href="/sign" class="btn-sm btn-topik"> Komputer</a>
                             </div>
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="card-link">Card link</a>
+                            <h5 class="card-title">{{$post->Judul}}</h5>
+                            <p class="card-text">{{$post->content}}</p>
+                            <a href="#" class="card-link">Read More</a>
+                            <a href="post/{{$post->id}}/edit" class="card-link">edit</a>
+                            <form action="post/{{$post->id}}" method="POST" class="d-inline">
+                                @method('delete')
+                                @csrf
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
                         </div>
                     </div>
                 </div>
-                <div class="col-6 mb-3">
-                    <div class="card post-card" style="width:auto;">
-                        <img src="{{ asset('images/pexels-cottonbro-4709285.jpg') }}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <div class="card-topik mb-3">
-                                <a href="/sign" class="btn-sm btn-topik"> Kopi</a>
-                                <a href="/sign" class="btn-sm btn-topik"> Komputer</a>
-                            </div>
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="card-link">Card link</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 mb-3">
-                    <div class="card post-card" style="width:auto;">
-                        <img src="{{ asset('images/pexels-cottonbro-4709285.jpg') }}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <div class="card-topik mb-3">
-                                <a href="/sign" class="btn-sm btn-topik"> Kopi</a>
-                                <a href="/sign" class="btn-sm btn-topik"> Komputer</a>
-                            </div>
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="card-link">Card link</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 mb-3">
-                    <div class="card post-card" style="width:auto;">
-                        <img src="{{ asset('images/pexels-cottonbro-4709285.jpg') }}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <div class="card-topik mb-3">
-                                <a href="/sign" class="btn-sm btn-topik"> Kopi</a>
-                                <a href="/sign" class="btn-sm btn-topik"> Komputer</a>
-                            </div>
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="card-link">Card link</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 mb-3">
-                    <div class="card post-card" style="width:auto;">
-                        <img src="{{ asset('images/pexels-cottonbro-4709285.jpg') }}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <div class="card-topik mb-3">
-                                <a href="/sign" class="btn-sm btn-topik"> Kopi</a>
-                                <a href="/sign" class="btn-sm btn-topik"> Komputer</a>
-                            </div>
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="card-link">Card link</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
