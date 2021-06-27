@@ -1,7 +1,7 @@
 @extends('layouts/main')
 @section('content')
 <section class="loginContent">
-    <div class="layar">
+    <div class="layar{{' '.$toggles}}">
         <div class="user signinBx">
             <div class="imageBx"><img src="{{asset('images/pexels-sasha-maslova-8388520(2).jpg')}}" alt="" id="pict1"></div>
             <div class="formBx">
@@ -10,7 +10,7 @@
                     <input type="text" name="username" id="username" placeholder="Username">
                     <input type="password" name="password" id="password" placeholder="Password">
                     <input type="submit" name="submit" id="submit" value="Login">
-                    <p class="signup">Don't have an account? <a href="#" onclick="toggle();">Sign Up</a></p>
+                    <p class="signup">Don't have an account? <a href="/sign/active" onclick="toggle();">Sign Up</a></p>
                 </form>
             </div>
         </div>

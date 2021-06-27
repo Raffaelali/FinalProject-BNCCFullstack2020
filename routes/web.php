@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/sign', function () {
-    return view('isipostPage');
-});
-Route::get('/', function () {
-    return view('landingPage');
-});
+Route::get('/', 'HomeController@index');
+Route::get('/sign', 'SignController@index');
+Route::get('/sign/{active}', 'SignController@index');
+Route::get('/post', 'PostController@index');

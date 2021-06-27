@@ -4,18 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class SignController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($toggles = "")
     {
-        return view('landingPage');
+        return view('loginPage', compact('toggles'));
     }
-
     /**
      * Show the form for creating a new resource.
      *
