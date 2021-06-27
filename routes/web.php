@@ -22,3 +22,7 @@ Route::get('/sign/{active}', 'SignController@index');
 // Route::patch('/post/{postid}', 'PostController@update');
 // Route::get('/post/{postid}/edit', 'PostController@edit');
 Route::resource('post', 'PostController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
