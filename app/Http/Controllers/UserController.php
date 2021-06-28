@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Pengguna;
 use Illuminate\Http\Request;
+use App\User;
 
-class PenggunasController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,6 +14,7 @@ class PenggunasController extends Controller
      */
     public function index()
     {
+        return view('profilePage');
     }
 
     /**
@@ -40,21 +41,20 @@ class PenggunasController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Pengguna  $pengguna
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Pengguna $pengguna)
+    public function show(User $user)
     {
-        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Pengguna  $pengguna
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pengguna $pengguna)
+    public function edit($id)
     {
         //
     }
@@ -63,10 +63,10 @@ class PenggunasController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Pengguna  $pengguna
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pengguna $pengguna)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -74,10 +74,10 @@ class PenggunasController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Pengguna  $pengguna
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pengguna $pengguna)
+    public function destroy($id)
     {
         //
     }

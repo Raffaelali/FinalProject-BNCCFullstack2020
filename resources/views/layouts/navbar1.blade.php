@@ -25,7 +25,7 @@
             @endif
             @else
               <li class="mybar">
-                <a id="" class="dropdown-item" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                <a id="" class="dropdown-item" href="{{ route('user.index') }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     {{ Auth::user()->name }}
                 </a>
                     <a class="dropdown-item" href="{{ route('logout') }}"

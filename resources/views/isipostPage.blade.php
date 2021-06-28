@@ -30,30 +30,29 @@
                     </div> 
                 </div>
                 <div>
+                    @foreach ($post->comment as $comment)
                     <div class="card mb-4">
                         <div class="card-header">
                             <div class="media d-flex flex-wrap justify-content-between align-items-center"> 
                                 <div>
-                                    <img src="{{ asset('images/pexels-thgusstavo-santana-1933873.jpg') }}" style="clip-path: circle()" alt=""> <br>
-                                    <a href="">Tom Harry</a>
-                                    <p> 13 days ago </p>
+                                    <img src="{{asset('images/pexels-thgusstavo-santana-1933873.jpg') }}" style="clip-path: circle()" alt=""> <br>
+                                    <a href="{{ route('user.index') }}">{{Auth::user()->name}}</a>
+                                    <p>{{$comment->created_at->format('d, M, Y')}}</p>
                                 </div>
                                 <div class="text-muted small ml-3">
-                                    <div>Member since <strong>01/1/2019</strong></div>
-                                    <div><strong>134</strong> posts</div>
+                                    <div>Member since <strong>{{Auth::user()->created_at->format('d, M, Y')}}</strong></div>
                                 </div>
                             </div>
                         </div>
                         <div class="card-body">
-                            @foreach ($post->comment as $comment)
                             <p>{{$comment->content}}</p>
-                            @endforeach
                         </div>
                         <div class="card-footer d-flex flex-wrap justify-content-between align-items-center px-0 pt-0 pb-3">
                             <div class="px-4 pt-3"></div>
-                            <div class="px-4 pt-3"> <a class="btn btn-primary">Reply</a> </div>
+                            <div class="px-4 pt-3"> <a class="btn btn-primary">Reply</a></div>
                         </div>
                     </div>
+                    @endforeach
                 </div>
             </div>
         </div>

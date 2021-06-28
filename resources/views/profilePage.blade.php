@@ -6,8 +6,8 @@
         <div class="container profile" style="padding-left:2.5%;">
             <div>
                 <img class="foto-profile" src="{{ asset('images/pexels-thgusstavo-santana-1933873.jpg') }}" alt="">
-                <h1 id="namaUser">Hello World</h1>
-                <h1 id="emailUser">Email@gmail.com</h1>
+                <h1 id="namaUser">{{Auth::user()->name}}</h1>
+                <h1 id="emailUser">{{Auth::user()->email}}</h1>
             </div>
             <div class="row">
                 <div class="col-4 mt-5 mb-5">

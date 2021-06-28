@@ -35,4 +35,7 @@ Route::prefix('post')->group(function () {
 Route::get('comment', 'CommentController@create')->name('comment.index');
 Route::get('comment/{post}', 'CommentController@create')->name('comment.create');
 Route::post('/', 'CommentController@store')->name('comment.store');
+
+Route::get('user/', 'UserController@index')->name('user.index');
+Route::get('user/{profile}', 'UserController@show')->name('user.show');
 Auth::routes();
