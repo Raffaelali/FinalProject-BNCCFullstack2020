@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
+use App\Comment;
 use Illuminate\Http\Request;
-use App\Topik;
 
-class TopikController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,7 @@ class TopikController extends Controller
      */
     public function index()
     {
-        // 
+        return redirect('/post');
     }
 
     /**
@@ -22,9 +23,9 @@ class TopikController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Post $post)
     {
-        //
+        return view('layouts.createComment', compact('post'));
     }
 
     /**
@@ -35,28 +36,28 @@ class TopikController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Comment::create($request->all());
+        return redirect('comment');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Komentar  $komentar
      * @return \Illuminate\Http\Response
      */
-    public function show(Topik $topik)
+    public function show(Comment $komentar)
     {
-        $posts = $topik->posts();
-        return view('Postpage', compact('posts'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Komentar  $komentar
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Comment $komentar)
     {
         //
     }
@@ -65,10 +66,10 @@ class TopikController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Komentar  $komentar
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Comment $komentar)
     {
         //
     }
@@ -76,10 +77,10 @@ class TopikController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Komentar  $komentar
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Comment $komentar)
     {
         //
     }

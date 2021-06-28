@@ -10,15 +10,18 @@
                         <h1 class="mb-3 text-bold"><strong>Postingan</strong></h1>
                         <h5 class="mplus text-black-77 mb-3">Hai, Selamat datang di postingan. Disini kamu bisa buat postingan <br> 
                         seputar IT dan kamu juga bisa lihat postingan dari teman-teman</h5>
-                        <a href="/post/create">Buat Posting Sekarang</a>
+                        <a href="{{route('posts.create')}}">Buat Posting Sekarang</a>
                     </div>
                 </div>
                 <div class="col-5 mt-5">
                     <h3 style="font-size:1.3em;" class="mb-3 pt-3 text-bold">Berikut ada list topik yang bisa kamu pilih</h3>
                     <div class="card mb-3">
                         <div class="card-body">
-                            <a href="" class="btn-sm btn-topik"> Kopi</a>
-                            <a href="" class="btn-sm btn-topik"> Komputer</a>
+                            @foreach ($posts as $post)
+                                @foreach ($post->topik as $topik)
+                                    <a href="{{ route('topiks.show', $topik->id) }}" class="btn-sm btn-topik"> {{$topik->topik_name}}</a>
+                                @endforeach
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -54,7 +57,7 @@
                         <div class="card-body badan-card">
                             <div class="card-topik mb-3">
                                 @foreach ($post->topik as $topik)
-                                <a href="{{ route('topiks.show', $topik->id) }}" class="btn-sm btn-topik">{{$topik->topik_name}}</a>
+                                    <a href="{{ route('topiks.show', $topik->id) }}" class="btn-sm btn-topik">{{$topik->topik_name}}</a>
                                 @endforeach
                             </div>
                             <h5 class="card-title">{{$post->Judul}}</h5>
