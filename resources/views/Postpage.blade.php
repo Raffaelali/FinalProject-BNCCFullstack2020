@@ -53,8 +53,9 @@
                         <img src="{{ asset('images/pexels-cottonbro-4709285.jpg') }}" class="" alt="...">
                         <div class="card-body badan-card">
                             <div class="card-topik mb-3">
-                                <a href="/" class="btn-sm btn-topik"> Kopi</a>
-                                <a href="/" class="btn-sm btn-topik"> Komputer</a>
+                                @foreach ($post->topik as $topik)
+                                <a href="{{ route('topiks.show', $topik->id) }}" class="btn-sm btn-topik">{{$topik->topik_name}}</a>
+                                @endforeach
                             </div>
                             <h5 class="card-title">{{$post->Judul}}</h5>
                             <p class="card-text">{{$post->content}}</p>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePostsTable extends Migration
+class CreatePostTopikTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
-            $table->id();
-            $table->string('Judul', 30);
-            $table->string('content', 360);
-            $table->string('picture', 255)->nullable();
-            $table->timestamps();
+        Schema::create('post_topik', function (Blueprint $table) {
+            $table->foreignId('post_id')->constrained('posts');
+            $table->foreignId('topik_id')->constrained('topiks');
+            $table->primary(['post_id', 'topik_id']);
         });
     }
 
@@ -29,6 +27,6 @@ class CreatePostsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('post_topik');
     }
 }

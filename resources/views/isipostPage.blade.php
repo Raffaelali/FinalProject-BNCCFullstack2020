@@ -7,6 +7,9 @@
             <img class="img-fluid w-100" src="{{ asset('images/pexels-cottonbro-4709285.jpg') }}" alt="">
         </div>
         <div class="container isi-postingan">
+            <div>
+                <h1>{{$post->topik->topik_name}}</h1> &middot; {{$post->created_at->format("d, F, Y")}}
+            </div>
             <div class="bg-white py-lg-5 py-3 px-lg-5 px-3">
                 <div class="col-12 mb-4">
                     <article style="font-size: 1.1rem;">

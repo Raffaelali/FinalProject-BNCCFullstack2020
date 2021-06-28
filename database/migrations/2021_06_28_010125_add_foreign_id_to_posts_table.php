@@ -15,8 +15,8 @@ class AddForeignIdToPostsTable extends Migration
     {
         Schema::table('posts', function (Blueprint $table) {
             $table->foreignId('pengguna_id')->nullable()->after('id');
-            $table->foreignId('topik_id')->nullable()->after('pengguna_id');
-            $table->foreignId('comment_id')->nullable()->after('topik_id');
+            // $table->foreignId('post_topik')->nullable()->after('pengguna_id');
+            $table->foreignId('comment_id')->nullable()->after('pengguna_id');
         });
     }
 
@@ -29,7 +29,7 @@ class AddForeignIdToPostsTable extends Migration
     {
         Schema::table('posts', function (Blueprint $table) {
             $table->dropColumn('pengguna_id');
-            $table->dropColumn('topik_id');
+            // $table->dropColumn('post_topik');
             $table->dropColumn('comment_id');
         });
     }

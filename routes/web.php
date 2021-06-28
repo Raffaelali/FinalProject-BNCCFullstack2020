@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', 'HomeController@index')->name('home.index');
 Route::get('/sign', 'SignController@index')->name('signs.index');
 Route::get('/sign/{class}', 'SignController@index')->name('signs.toggle');
-
+Route::get('topik/{topik}', 'TopikController@show')->name('topiks.show');
 Route::prefix('post')->middleware('auth')->group(function () {
     Route::get('{post}', 'PostController@show')->name('posts.show')->withoutMiddleware('auth');
     Route::get('', 'PostController@index')->name('posts.index')->withoutMiddleware('auth');

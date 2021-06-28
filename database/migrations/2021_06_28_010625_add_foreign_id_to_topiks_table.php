@@ -14,7 +14,6 @@ class AddForeignIdToTopiksTable extends Migration
     public function up()
     {
         Schema::table('topiks', function (Blueprint $table) {
-            $table->foreignId('post_id')->nullable()->after('id');
         });
     }
 
@@ -26,7 +25,7 @@ class AddForeignIdToTopiksTable extends Migration
     public function down()
     {
         Schema::table('topiks', function (Blueprint $table) {
-            $table->dropColumn('post_id');
+            // $table->dropColumn('');
         });
     }
 }
