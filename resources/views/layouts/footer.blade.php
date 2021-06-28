@@ -3,8 +3,8 @@
         <div class="row">
             <div class="col-6 py-5">
             <h5 class="text-light fw-bold">Menu</h5>
-            <div><a href="/" class="link-light">Home</a></div>
-            <div><a href="" class="link-light">Post</a></div>
+            <div><a href="{{ route('home.index') }}" class="link-light">Home</a></div>
+            <div><a href="{{ route('posts.index') }}" class="link-light">Post</a></div>
             <div><a href="" class="link-light">about</a></div>
             </div>
             <div class="col-6 py-5">

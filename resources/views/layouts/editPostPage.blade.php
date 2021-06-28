@@ -4,8 +4,8 @@
 <div class="container">
     <div class="row">
         <div class="col-8">
-            <h1 class="mt-3">Buat Post</h1>
-            <form action="/post/{{$post->id}}" method="POST" {{--enctype="multipart/form-data" --}}>
+            <h1 class="mt-3">Edit Post</h1>
+            <form action="{{ route('posts.edit', $post->id) }}" method="POST" {{--enctype="multipart/form-data" --}}>
                 @method('patch')
                 @csrf
                 <input type="hidden" name="pengguna_id" value="4"> {{-- perlu dikerjakan--}}
@@ -24,7 +24,7 @@
                     <label for="picture">Gambar</label>
                     <input type="file" name="picture" id="gambar">
                 </div>--}}
-                <button type="submit" class="btn btn-primary">Tambah</button>
+                <button type="submit" class="btn btn-primary">Edit</button>
             </form>
         </div>
     </div>

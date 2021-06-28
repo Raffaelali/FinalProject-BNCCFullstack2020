@@ -10,11 +10,9 @@
             <div class="bg-white py-lg-5 py-3 px-lg-5 px-3">
                 <div class="col-12 mb-4">
                     <article style="font-size: 1.1rem;">
-                        <h3 class="fw-bold text-soft-black">Mengenal Bahasa Pemrograman Kotlin</h3>
+                        <h3 class="fw-bold text-soft-black">{{$post->Judul}}</h3>
                         <div class="content-font" style="text-align: justify;">
-                            <p><strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut pharetra odio. In ut odio id enim viverra dictum. Aenean lorem massa, scelerisque vel purus in, porta hendrerit ipsum. Phasellus congue vitae augue quis laoreet. Nam sit amet justo in massa euismod sodales. Quisque volutpat libero sed magna venenatis, non consectetur mauris auctor. Nam vel viverra est. Donec convallis purus in sem tempus, vulputate ultrices dui gravida. Duis bibendum, lectus sodales sollicitudin mollis, odio massa auctor neque, nec rutrum risus massa et elit. Vivamus eu lectus lacus. Etiam molestie nec ex vitae suscipit. Nulla aliquam leo elit, vitae volutpat est ullamcorper at. Mauris ac enim non orci suscipit semper. Phasellus congue ex interdum orci efficitur, eget tincidunt elit accumsan. Sed nisi nisi, scelerisque vitae ex vitae, fringilla faucibus neque. Cras euismod elementum arcu id maximus.
-                            Duis lacinia nulla sed purus vestibulum volutpat rutrum non libero. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas porta fermentum arcu, sit amet venenatis ipsum feugiat nec. Aliquam ut quam vitae erat faucibus ullamcorper. Aenean in lacus risus. Praesent eget erat at leo bibendum eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec posuere elit vitae ipsum bibendum varius. Curabitur at nisl semper, pharetra nisi sed, convallis turpis.
-                            Sed eu ipsum sit amet neque pharetra tincidunt. Pellentesque tincidunt enim eu urna varius imperdiet. Nam sem turpis, rutrum id viverra vel, ultricies sed purus. Ut et neque eu dui porta lobortis sed hendrerit lacus. Integer ac justo lobortis justo malesuada pharetra vel at risus. Morbi finibus, tellus at lacinia rutrum, massa leo imperdiet sapien, et blandit est lacus non lacus. Pellentesque bibendum nisl ac diam pretium tristique. Praesent vestibulum felis eget sem placerat facilisis. Maecenas vestibulum vel neque vitae feugiat. Vestibulum fermentum massa id nulla rhoncus, eu semper mi euismod. Nulla lacinia suscipit pharetra. </strong> </p>
+                            <p><strong>{{$post->content}}</strong> </p>
                         </div>
                     </article>
                 </div>

@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-8">
             <h1 class="mt-3">Buat Post</h1>
-            <form action="/post" method="POST" {{--enctype="multipart/form-data" --}}>
+            <form action="{{ route('post.store') }}" method="POST" {{--enctype="multipart/form-data" --}}>
                 @csrf
                 <input type="hidden" name="pengguna_id" value="4"> {{-- perlu dikerjakan--}}
                 {{-- <input type="hidden" name="topik_id" value="4"> --}}

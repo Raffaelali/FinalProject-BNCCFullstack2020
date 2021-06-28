@@ -53,14 +53,14 @@
                         <img src="{{ asset('images/pexels-cottonbro-4709285.jpg') }}" class="" alt="...">
                         <div class="card-body badan-card">
                             <div class="card-topik mb-3">
-                                <a href="/sign" class="btn-sm btn-topik"> Kopi</a>
-                                <a href="/sign" class="btn-sm btn-topik"> Komputer</a>
+                                <a href="/" class="btn-sm btn-topik"> Kopi</a>
+                                <a href="/" class="btn-sm btn-topik"> Komputer</a>
                             </div>
                             <h5 class="card-title">{{$post->Judul}}</h5>
                             <p class="card-text">{{$post->content}}</p>
-                            <a href="#" class="card-link">Read More</a>
-                            <a href="post/{{$post->id}}/edit" class="card-link">edit</a>
-                            <form action="post/{{$post->id}}" method="POST" class="d-inline">
+                            <a href="{{ route('posts.show',$post->id) }}" class="card-link">Read More</a>
+                            <a href="{{route('posts.edit', $post->id)}}" class="card-link">edit</a>
+                            <form action="{{ route('posts.delete',$post->id) }}" method="POST" class="d-inline">
                                 @method('delete')
                                 @csrf
                                 <button type="submit" class="btn btn-danger">Delete</button>

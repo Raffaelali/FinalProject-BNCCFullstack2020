@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,16 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HomeController@index');
-Route::get('/sign', 'SignController@index');
-Route::get('/sign/{active}', 'SignController@index');
-// Route::get('/post', 'PostController@index');
-// Route::get('/post/create', 'PostController@create');
-// Route::post('/post', 'PostController@store');
-// Route::patch('/post/{postid}', 'PostController@update');
-// Route::get('/post/{postid}/edit', 'PostController@edit');
-Route::resource('post', 'PostController');
+Route::get('/', 'HomeController@index')->name('home.index');
+Route::get('/sign', 'SignController@index')->name('signs.index');
+Route::get('/sign/{class}', 'SignController@index')->name('signs.toggle');
+
+Route::prefix('post')->middleware('auth')->group(function () {
+    Route::get('{post}', 'PostController@show')->name('posts.show')->withoutMiddleware('auth');
+    Route::get('', 'PostController@index')->name('posts.index')->withoutMiddleware('auth');
+    Route::get('create', 'PostController@create')->name('posts.create');
+    Route::post('', 'PostController@store')->name('posts.store');
+    Route::patch('{post}', 'PostController@update')->name('posts.update');
+    Route::delete('{post}', 'PenggunasController@destroy')->name('posts.delete');
+    Route::get('{post}/edit', 'PostController@edit')->name('posts.edit');
+});
+// Route::resource('post', 'PostController');
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
