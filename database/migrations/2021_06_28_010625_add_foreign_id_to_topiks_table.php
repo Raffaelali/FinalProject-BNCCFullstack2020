@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTopiksTable extends Migration
+class AddForeignIdToTopiksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CreateTopiksTable extends Migration
      */
     public function up()
     {
-        Schema::create('topiks', function (Blueprint $table) {
-            $table->id();
-            $table->string('topik_name', 12);
-            $table->timestamps();
+        Schema::table('topiks', function (Blueprint $table) {
+            $table->foreignId('post_id')->nullable()->after('id');
         });
     }
 
@@ -27,6 +25,8 @@ class CreateTopiksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('topiks');
+        Schema::table('topiks', function (Blueprint $table) {
+            $table->dropColumn('post_id');
+        });
     }
 }
